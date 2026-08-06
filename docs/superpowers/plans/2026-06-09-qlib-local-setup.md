@@ -1,5 +1,13 @@
 # Qlib Local Source Setup Implementation Plan
 
+> **路径状态说明（2026-08-03 复核追加，仅作说明，下文历史记录未改动）**
+>
+> - 本文写作时工作区根目录是 `/Users/zyb/Desktop/vibe coding`。工作区已于 2026-06-15 迁到 `/Users/zyb/工作/vibe coding`，迁移时留下的兼容 symlink 又在 2026-07-23 被一个空目录顶掉，**下文出现的旧绝对路径今天不再指向本工作区**，保留它们只是为了忠实记录当时的状态。
+> - 下文引用的以下位置，在今天的工作区里**已经不存在**（换成新根也找不到）：
+>   - `Financial Management/qlib/examples/benchmarks/LightGBM/mlruns` —— MLflow 的运行时产出目录，跑过基准才会生成、也不入库。今天不存在属正常，不是资产丢失。
+>
+> 因此本文可以当作当时的决策与实现记录来读，但**不要照着里面的路径去找文件或执行命令**。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Make the source-installed qlib checkout usable for local development by installing `.[dev]`, preparing the default market data directory, running a minimal official demo, and confirming that the current LibreSSL warning does not block the core workflow.
